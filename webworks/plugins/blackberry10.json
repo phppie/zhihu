@@ -1,0 +1,79 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {
+            "www/config.xml": {
+                "parents": {
+                    "/widget": [
+                        {
+                            "xml": "<feature name=\"com.blackberry.app\" value=\"com.blackberry.app\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"com.blackberry.ui.toast\" value=\"com.blackberry.ui.toast\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"com.blackberry.ui.dialog\" value=\"com.blackberry.ui.dialog\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"com.blackberry.invoke\" value=\"com.blackberry.invoke\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"com.blackberry.invoke.card\" value=\"com.blackberry.invoke.card\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"com.blackberry.io\" value=\"com.blackberry.io\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"com.blackberry.utils\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"com.blackberry.io.filetransfer\" value=\"com.blackberry.io.filetransfer\" />",
+                            "count": 1
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "installed_plugins": {
+        "com.blackberry.app": {
+            "PACKAGE_NAME": "anpho.zhihu.daily"
+        },
+        "com.blackberry.ui.toast": {
+            "PACKAGE_NAME": "anpho.zhihu.daily"
+        },
+        "com.blackberry.ui.dialog": {
+            "PACKAGE_NAME": "anpho.zhihu.daily"
+        },
+        "com.blackberry.invoke": {
+            "PACKAGE_NAME": "anpho.zhihu.daily"
+        },
+        "com.blackberry.invoke.card": {
+            "PACKAGE_NAME": "anpho.zhihu.daily"
+        },
+        "com.blackberry.io": {
+            "PACKAGE_NAME": "anpho.zhihu.daily"
+        },
+        "com.blackberry.io.filetransfer": {
+            "PACKAGE_NAME": "anpho.zhihu.daily"
+        },
+        "org.apache.cordova.inappbrowser": {
+            "PACKAGE_NAME": "anpho.zhihu.daily"
+        }
+    },
+    "dependent_plugins": {
+        "com.blackberry.utils": {
+            "PACKAGE_NAME": "anpho.zhihu.daily"
+        }
+    }
+}

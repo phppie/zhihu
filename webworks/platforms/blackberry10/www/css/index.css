@@ -1,0 +1,41 @@
+.d-list{
+    position: relative;
+    width: 100%;
+    padding: 5px 0px;
+    height: 150px;
+}
+.d-pic{
+    width:130px;
+    height:130px;
+    padding:0px;
+    margin:0px;
+    position: absolute;
+    top: 10px;
+    left:10px;
+}
+.d-title{
+    position: absolute;
+    left: 170px;
+    top : 20px;
+    margin: 0px;
+    padding :0px;
+}
+
+.view-body{
+    text-wrap:normal;
+    word-break: break-all;
+    word-wrap:  break-word;
+}
+.view-image{
+    width: 100%;
+    margin: 0px auto;
+}
+.view-image-by{
+    font-size: 0.8em;
+    text-align: right;
+    font-style: italic;
+}
+
+a{
+    color: #828282 !important ;
+}
