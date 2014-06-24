@@ -1,10 +1,30 @@
 var UI = {
     showSelector: function() {
-        alert("还没做")
+        bb.pushScreen("selector.html", "selector");
     },
-    shareURL:function(u){
+    shareURL: function(u) {
         //分享页面地址
         Invoke.targets(u);
+    },
+    switchDate: function(obj) {
+        console.log(obj.value);
+        var v = new Date(obj.value);
+        v.setDate(v.getDate() + 1);
+        var newdate = v.toISOString().substr(0, 10).split("-").join("");
+        console.log(newdate);
+        _showdate = v;
+        _prevdate = newdate;
+    },
+    openHistory: function() {
+        bb.pushScreen("history.html", "history", {
+            "date": _prevdate
+        })
+    },
+    enterAbout: function() {
+        bb.pushScreen("about.html", "about");
+    },
+    enterSettings: function() {
+        bb.pushScreen("settings.html", "settings");
     }
 };
 

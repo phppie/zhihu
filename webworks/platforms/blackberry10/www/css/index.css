@@ -1,7 +1,7 @@
 .d-list{
     position: relative;
     width: 100%;
-    padding: 5px 0px;
+    padding: 0px 0px;
     height: 150px;
 }
 .d-pic{
@@ -38,4 +38,33 @@
 
 a{
     color: #828282 !important ;
+}
+
+.view-more {
+  margin-bottom: 25px;
+  text-align: center;
+}
+.view-more a {
+  font-size: 1em;
+  display: inline-block;
+  width: 500px;
+  height: 2em;
+  line-height: 1.5em;
+}
+
+
+
+.twocolumn {
+    display: table;
+    width: 100%;
+}
+.twocolumn>div:first-child {
+    display: inline-block;
+    line-height: 3em;
+    float: left;
+}
+.twocolumn>div:last-child {
+    display: inline-block;
+    line-height: 3em;
+    float: right;
 }

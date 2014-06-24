@@ -46,6 +46,12 @@ var app = {
                 if (id === "view") {
 
                 }
+                if (id === "selector") {
+                    e.getElementById('datepicker').value = new Date().toISOString().substr(0, 10);
+                }
+                if (id === 'settings') {
+                    app.loadSettings(e, id, param);
+                }
             },
             ondomready: function(e, id, param) {
                 if (id === "main") {
@@ -53,6 +59,25 @@ var app = {
                         if (success) {
                             var df = View.buildList(d);
                             $("[data-bb-type=scroll-panel]").append(df);
+                        } else {
+                            Toast.regular("发生错误，错误信息为：" + JSON.stringify(d), 5000);
+                            bb.popScreen();
+                        }
+                    });
+                    $('.bb-titlebar-button').on("click", function() {
+                        UI.showSelector();
+                    });
+                }
+                if (id === "history") {
+                    var prev = param['date'];
+                    zhihu.getDailyBefore(prev, function(success, d) {
+                        if (success) {
+                            var df = View.buildList(d);
+                            $("[data-bb-type=scroll-panel]").append(df);
+                            $('[data-bb-type=panel-header]').text(d['date']);
+                        } else {
+                            Toast.regular("发生错误，错误信息为：" + JSON.stringify(d), 5000);
+                            bb.popScreen();
                         }
                     });
                 }
@@ -72,7 +97,7 @@ var app = {
                             });
                             currentshareurl = d.share_url;
                         } else {
-                            Toast.regular("获取数据失败", 1000);
+                            Toast.regular("发生错误，错误信息为：" + JSON.stringify(d), 5000);
                             bb.popScreen();
                         }
                     });
@@ -86,11 +111,33 @@ var app = {
                     }).on("swiperight", function() {
                         bb.popScreen();
                     });
+                    var sc=$('[data-bb-type=screen]')[0].bbUIscrollWrapper;
+                    
+                    shortcut.remove("T");
+                    shortcut.remove("B");
+                    shortcut.remove("0");
+                    shortcut.remove("space");
+
+                    shortcut.add("T", function() {
+                        $(sc).animate({'scrollTop':0},'fast')
+                    });
+                    shortcut.add("B", function() {
+                        $(sc).animate({'scrollTop':$('[data-bb-type=round-panel]').height()},'fast')
+                    });
+                    shortcut.add("0", function() {
+                        sc.scrollByPages(-1);
+                    });
+                    shortcut.add("space", function() {
+                        sc.scrollByPages(1);
+                        $('#ab')[0].hide();
+                        view_ab_show = false;
+                    });
+
                 }
             }
         });
         bb.pushScreen('main.html', 'main');
-//        navigator.splashscreen.hide();
+        navigator.splashscreen.hide();
     },
     applyTheme: function(e) {
         bb.screen.controlColor = (app.config['darktheme']) ? 'dark' : 'light';
@@ -109,5 +156,20 @@ var app = {
                 document.body.classList.remove("dark");
             }
         }
+    },
+    loadSettings: function(e, id, p) {
+        if (app.config['darktheme']) {
+            e.getElementById('themeToggle').setAttribute('data-bb-checked', 'true');
+        } else {
+            e.getElementById('themeToggle').setAttribute('data-bb-checked', 'false');
+        }
+    },
+    saveSettings: function(obj) {
+        if (obj.checked) {
+            app.config['darktheme'] = true;
+        } else {
+            app.config['darktheme'] = false;
+        }
+        app.saveConfig();
     }
 };

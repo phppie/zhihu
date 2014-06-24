@@ -39,6 +39,10 @@
                         {
                             "xml": "<feature name=\"com.blackberry.io.filetransfer\" value=\"com.blackberry.io.filetransfer\" />",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"SplashScreen\" value=\"SplashScreen\" />",
+                            "count": 1
                         }
                     ]
                 }
@@ -68,6 +72,9 @@
             "PACKAGE_NAME": "anpho.zhihu.daily"
         },
         "org.apache.cordova.inappbrowser": {
+            "PACKAGE_NAME": "anpho.zhihu.daily"
+        },
+        "org.apache.cordova.splashscreen": {
             "PACKAGE_NAME": "anpho.zhihu.daily"
         }
     },

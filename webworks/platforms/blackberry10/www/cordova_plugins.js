@@ -62,6 +62,13 @@ module.exports = [
         "merges": [
             "blackberry.io.filetransfer"
         ]
+    },
+    {
+        "file": "plugins/org.apache.cordova.splashscreen/www/splashscreen.js",
+        "id": "org.apache.cordova.splashscreen.SplashScreen",
+        "clobbers": [
+            "navigator.splashscreen"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -75,6 +82,7 @@ module.exports.metadata =
     "com.blackberry.io": "1.0.0",
     "com.blackberry.io.filetransfer": "1.0.0",
     "org.apache.cordova.inappbrowser": "0.4.0",
+    "org.apache.cordova.splashscreen": "0.3.0",
     "com.blackberry.utils": "1.0.0"
 }
 // BOTTOM OF METADATA
