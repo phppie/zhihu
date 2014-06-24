@@ -1,6 +1,10 @@
 var UI = {
     showSelector: function() {
         alert("还没做")
+    },
+    shareURL:function(u){
+        //分享页面地址
+        Invoke.targets(u);
     }
 };
 
