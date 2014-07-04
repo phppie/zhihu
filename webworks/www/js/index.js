@@ -60,7 +60,7 @@ var app = {
                             var df = View.buildList(d);
                             $("[data-bb-type=scroll-panel]").append(df);
                         } else {
-                            Toast.regular("发生错误，错误信息为：" + JSON.stringify(d), 5000);
+                            showExitPromptDialog("发生错误，错误信息为：" + JSON.stringify(d));
                             bb.popScreen();
                         }
                     });
@@ -76,7 +76,7 @@ var app = {
                             $("[data-bb-type=scroll-panel]").append(df);
                             $('[data-bb-type=panel-header]').text(d['date']);
                         } else {
-                            Toast.regular("发生错误，错误信息为：" + JSON.stringify(d), 5000);
+                            showExitPromptDialog("发生错误，错误信息为：" + JSON.stringify(d));
                             bb.popScreen();
                         }
                     });
@@ -97,7 +97,7 @@ var app = {
                             });
                             currentshareurl = d.share_url;
                         } else {
-                            Toast.regular("发生错误，错误信息为：" + JSON.stringify(d), 5000);
+                            showExitPromptDialog("发生错误，错误信息为：" + JSON.stringify(d));
                             bb.popScreen();
                         }
                     });
@@ -111,18 +111,18 @@ var app = {
                     }).on("swiperight", function() {
                         bb.popScreen();
                     });
-                    var sc=$('[data-bb-type=screen]')[0].bbUIscrollWrapper;
-                    
+                    var sc = $('[data-bb-type=screen]')[0].bbUIscrollWrapper;
+
                     shortcut.remove("T");
                     shortcut.remove("B");
                     shortcut.remove("0");
                     shortcut.remove("space");
 
                     shortcut.add("T", function() {
-                        $(sc).animate({'scrollTop':0},'fast')
+                        $(sc).animate({'scrollTop': 0}, 'fast')
                     });
                     shortcut.add("B", function() {
-                        $(sc).animate({'scrollTop':$('[data-bb-type=round-panel]').height()},'fast')
+                        $(sc).animate({'scrollTop': $('[data-bb-type=round-panel]').height()}, 'fast')
                     });
                     shortcut.add("0", function() {
                         sc.scrollByPages(-1);
@@ -173,3 +173,13 @@ var app = {
         app.saveConfig();
     }
 };
+
+function showExitPromptDialog(t) {
+    try {
+        blackberry.ui.dialog.standardAskAsync(t, blackberry.ui.dialog.D_OK, function() {
+            bb.popScreen();
+        }, {title: "网络错误"});
+    } catch (e) {
+        bb.popScreen();
+    }
+}

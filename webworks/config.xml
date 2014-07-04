@@ -1,10 +1,10 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
 <widget id="anpho.zhihu.daily" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:rim="http://www.blackberry.com/ns/widgets">
-    <name>Zhihu Daily</name>
+    <name>Zhihu Daily Reader</name>
     <name lang="zh-CN">知乎日报</name>
     <author>anpho</author>
     <description lang="zh-CN">知乎日报客户端</description>
-    <description>ZhiHu Daily</description>
+    <description>ZhiHu Daily Reader</description>
     <content src="index.html" />
     <icon src="img/114.png"/>
     <preference name="AutoHideSplashScreen" value="true" />

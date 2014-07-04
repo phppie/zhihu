@@ -36,3 +36,12 @@ var zhihu = {
         });
     }
 };
+
+/*
+ * public static String queryHotStoriesRequestURL = "http://news-at.zhihu.com/api/3/news/hot";
+public static String querySectionsRequestURL = "http://news-at.zhihu.com/api/3/sections";
+public static String querySectionDetailsRequestURL = "http://news-at.zhihu.com/api/3/section/";  //后边填id
+public static String queryLastStoriesRequestURL = "http://news-at.zhihu.com/api/3/stories/latest";
+public static String queryBeforeStoriesRequestURL = "http://news-at.zhihu.com/api/3/stories/before/";
+public static String queryStoryDetailsRequestURL = "http://news-at.zhihu.com/api/3/story/";
+ */
